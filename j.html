@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: wheat;
+        }
+
+        .childbox {
+            height: 68vh;
+            width: 25%;
+            background-color: gray;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            gap: 25px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 20 px 5px;
+            /* border: 1px solid; */
+        }
+
+        .imgbox {
+            height: 32vh;
+            width: 100%;
+            border-radius: 10px;
+            /* border: 1px solid; */
+        }
+
+        .imge {
+            height: 100%;
+            width: 100%;
+        }
+
+        .heading {
+            height: 3vh;
+            width: 80%;
+            padding-left: 2%;
+            font-size: 14px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            font-weight: bolder;
+            /* border: 1px solid; */
+        }
+
+        .box1 {
+            height: 12vh;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .para {
+            height: 3vh;
+            width: 90%;
+            padding-left: 2%;
+            font-size: 14px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            /* border: 1px solid; */
+        }
+
+        .box2 {
+            height: 12vh;
+            width: 95%;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            /* border: 1px solid; */
+        }
+
+        .aroundbox {
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+            /* border: 1px solid; */
+        }
+
+        .box3 {
+            height: 8vh;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            /* border: 1px solid; */
+
+        }
+
+        .heading2,
+        .heading2s {
+            height: 3vh;
+            width: 90%;
+            padding-left: 2%;
+            font-size: 14px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            /* border: 1px solid; */
+        }
+
+        .show {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 50%, rgba(242, 242, 242, 1) 100%, rgba(184, 184, 184, 1)100%);
+            background-size: 150% 100%;
+            animation: sho 1s linear infinite;
+        }
+
+        @keyframes sho {
+            0% {
+                background-position: 50% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .imge2 {
+            height: 100%;
+            width: 100%;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="childbox">
+            <div class="imgbox show"></div>
+            <div class="heading show"></div>
+            <div class="box1">
+                <div class="para show"></div>
+                <div class="para show"></div>
+                <div class="para show"></div>
+            </div>
+            <div class="box2">
+                <div class="aroundbox show"></div>
+                <div class="box3">
+                    <div class="heading2 show"></div>
+                    <div class="heading2s show"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const imgbox1 = document.querySelector(".imgbox")
+        const head = document.querySelector(".heading")
+        const par = document.querySelector(".para")
+        const aru = document.querySelector(".aroundbox")
+        const head2 = document.querySelector(".heading2")
+        const head2s = document.querySelector(".heading2s")
+        const sh = document.querySelectorAll(".show")
+
+        setTimeout(run, 2500)
+
+        function run() {
+
+            imgbox1.innerHTML = '<img class="imge" src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80" alt="" />'
+            head.innerHTML = 'Lorem ipsum dolor sit amet'
+            par.innerHTML = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore perferendis'
+            aru.innerHTML = '<img class="imge2" src="https://randomuser.me/api/portraits/men/45.jpg" alt="" />'
+            head2.innerHTML = 'John Doe'
+            head2s.innerHTML = 'Oct 08, 2020'
+
+            sh.forEach((sho) => sho.classList.remove('show'))
+        }
+    </script>
+</body>
+
+</html>
